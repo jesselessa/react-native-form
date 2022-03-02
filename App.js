@@ -27,16 +27,18 @@ export default function App() {
         secureTextEntry
         onChangeText={setPassword}
       />
-      <TouchableOpacity onPress={handlePress}>
-        <Text>Submit</Text>
+
+      <TouchableOpacity style={styles.btn} onPress={handlePress}>
+        <Text>Login</Text>
       </TouchableOpacity>
+
       {auth ? (
         <View>
           <Text>Form submitted</Text>
         </View>
       ) : (
         <View>
-          <Text>You must enter a valid email and a valid password</Text>
+          <Text>Please enter a valid login name and password</Text>
         </View>
       )}
       <StatusBar style="auto" />
@@ -58,4 +60,6 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     padding: 10,
   },
+
+  btn: { borderWidth: 1, backgroundColor: "lightblue" },
 });
