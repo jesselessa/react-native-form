@@ -7,10 +7,13 @@ export default function App() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [auth, setAuth] = useState(false);
+  const [error, setError] = useState(false);
 
   const handlePress = () => {
     if (email.length > 5 && password.length > 5) {
       setAuth(true);
+    } else {
+      setError(true);
     }
   };
 
@@ -27,20 +30,21 @@ export default function App() {
         secureTextEntry
         onChangeText={setPassword}
       />
-
       <TouchableOpacity style={styles.btn} onPress={handlePress}>
-        <Text>Login</Text>
+        <Text style={styles.btnTxt}>Login</Text>
       </TouchableOpacity>
-
       {auth ? (
         <View>
           <Text>Form submitted</Text>
         </View>
       ) : (
-        <View>
-          <Text>Please enter a valid login name and password</Text>
-        </View>
+        error && (
+          <View>
+            <Text>Please enter a valid name or password</Text>
+          </View>
+        )
       )}
+
       <StatusBar style="auto" />
     </View>
   );
@@ -61,5 +65,19 @@ const styles = StyleSheet.create({
     padding: 10,
   },
 
-  btn: { borderWidth: 1, backgroundColor: "lightblue" },
+  btn: {
+    width: 60,
+    height: 30,
+    borderWidth: 1,
+    backgroundColor: "lightblue",
+    borderRadius: 8,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  // btnTxt: {
+  // textAlign: "center",
+  // justifyContent: "center",
+  // alignItems: "center",
+  // },
 });
