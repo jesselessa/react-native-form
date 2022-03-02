@@ -1,7 +1,15 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import { TouchableOpacity, TextInput } from "react-native";
+// React
 import { useState } from "react";
+// React Native
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  TextInput,
+} from "react-native";
+// React-router-native
+import { NativeRouter, Routes, Route } from "react-router-native";
 
 export default function App() {
   const [email, setEmail] = useState("");
@@ -44,8 +52,6 @@ export default function App() {
           </View>
         )
       )}
-
-      <StatusBar style="auto" />
     </View>
   );
 }
