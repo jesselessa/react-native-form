@@ -12,7 +12,6 @@ import {
 // React-router-native
 import { useNavigate } from "react-router-native";
 // Page
-import Home from "./Home";
 
 export default function Login() {
   // Navigation
@@ -22,16 +21,13 @@ export default function Login() {
   const [password, setPassword] = useState("");
   //   const [auth, setAuth] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [logBtnTxt, setLogBtnTxt] = useState("Login");
   const [error, setError] = useState(false);
 
   const handlePress = () => {
     if (email.length > 5 && password.length > 5) {
       //   setAuth(true);
-      navigate(Home);
+      navigate("/home");
       setIsLoggedIn((prev) => !prev);
-      setLogBtnTxt("Logout");
-      navigate(Home);
     } else {
       setError((prev) => !prev);
     }
@@ -53,7 +49,7 @@ export default function Login() {
           onChangeText={setPassword}
         />
         <TouchableOpacity style={styles.btn} onPress={handlePress}>
-          <Text style={styles.btnTxt}>{logBtnTxt}</Text>
+          <Text style={styles.btnTxt}>Login</Text>
         </TouchableOpacity>
         {isLoggedIn ? (
           <View>
