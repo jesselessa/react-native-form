@@ -49,7 +49,7 @@ export default function Login() {
           onChangeText={setPassword}
         />
         <TouchableOpacity style={styles.btn} onPress={handlePress}>
-          <Text style={styles.btnTxt}>Login</Text>
+          <Text>Login</Text>
         </TouchableOpacity>
         {isLoggedIn ? (
           <View>

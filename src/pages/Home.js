@@ -8,14 +8,14 @@ export default function Home() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Back to Login</Text>
+      <Text style={styles.title}>Homepage</Text>
 
       <TouchableOpacity
         onPress={() => {
           navigate(-1);
         }}
       >
-        <Text>Back to Homepage</Text>
+        <Text>Back to Login</Text>
       </TouchableOpacity>
     </SafeAreaView>
   );
